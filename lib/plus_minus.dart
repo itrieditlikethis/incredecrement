@@ -10,6 +10,26 @@ class PlusMinus extends StatefulWidget {
 }
 
 class _PlusMinus extends State<PlusMinus> {
+  late int number;
+
+  @override
+  void initState() {
+    number = 100;
+    super.initState();
+  }
+
+  void onMinus() {
+    setState(() {
+      number--;
+    });
+  }
+
+  void onPlus() {
+    setState(() {
+      number++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,25 +42,25 @@ class _PlusMinus extends State<PlusMinus> {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: onMinus,
             icon: const Icon(Icons.exposure_minus_1),
             style: IconButton.styleFrom(iconSize: 35),
           ),
-          const Padding(
-            padding: EdgeInsets.only(
+          Padding(
+            padding: const EdgeInsets.only(
               left: 15,
               right: 15,
             ),
             child: Text(
-              'number',
-              style: TextStyle(
+              '$number',
+              style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: onPlus,
             icon: const Icon(Icons.plus_one),
             style: IconButton.styleFrom(
               iconSize: 35,
