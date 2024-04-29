@@ -9,10 +9,30 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          backgroundColor: Colors.blueGrey,
+          title: const Text('Incredecrement'),
+          centerTitle: true,
+          titleTextStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: 30,
+          ),
+        ),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Plus to increment'),
+              SizedBox(height: 10),
+              Text('buttons & info block'),
+              SizedBox(height: 10),
+              Text('Minus to decrement'),
+            ],
+          ),
         ),
       ),
     );
