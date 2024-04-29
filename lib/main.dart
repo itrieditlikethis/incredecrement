@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:incredecrement/plus_minus.dart';
 
 void main() {
   runApp(const MainApp());
@@ -28,7 +29,7 @@ class MainApp extends StatelessWidget {
             children: [
               Text('Plus to increment'),
               SizedBox(height: 10),
-              Text('buttons & info block'),
+              PlusMinus(),
               SizedBox(height: 10),
               Text('Minus to decrement'),
             ],
